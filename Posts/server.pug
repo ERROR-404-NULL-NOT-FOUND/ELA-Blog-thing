@@ -1,0 +1,34 @@
+doctype html
+include ../includes/navigation.pug
+h1 #[u My server]
+.desc How I set up my server, & what I use it for
+.text
+    h3 How I got my server and specs
+    p
+        | I'll just touch on this briefly, but I got my server for free from the co-owner of Pi-Architects (Architectural firm), Mr. Warrick.
+        | The server itself is a Dell Poweredge T630, and the specs are as follows:
+        br
+        br
+        | Dual Intel Xeon E5-2620 v3 (24 cores in total)
+        br
+        | 64 gb DDR4 ram
+        br
+        | 24 tb raw storage, 20x600 gb 10k rpm hard drives, 2x600 gb 15k hard drives (raid 1 boot), 8x1.2 tb 10k hard drives
+    
+    h3 OS and initial setup
+    p 
+        | The first thing I had to do when I set up my server was wipe the drives, as I was contractually obligated to do so.
+        | After like 8 hours, the drives were wiped, and I could move on to installing a distro.
+        | Before I installed a distro, I had to pick one.
+        | This part was tricky, since there were a lot of options, and I'll list a few of them here:
+ul
+            each item in ['Alpine', 'Debian 11 stable', 'Ubuntu Server', 'Arch']
+                li=item
+        | I ended up settling on Debian 11 stable, mostly due to me knowing how to use Debian, and not really wanting to deal with removing Snap from Ubuntu Server.
+        br
+        | The installation/initial setup process was pretty painless, the hardest thing that I had to do was setting up ZFS with 28 drives (ended up ripping out 20 of them due to the immense power draw).
+    h3 Setting up docker
+    p
+        | So, the first thing to do after initial setup was install docker.
+        | This part was more painful than I anticipated, since Debian Stable's repos are so out-of-date.
+        | I ended up going to the #[a(href='https://docs.docker.com/desktop/install/debian/') docker website] and copy-pasted the commands from there

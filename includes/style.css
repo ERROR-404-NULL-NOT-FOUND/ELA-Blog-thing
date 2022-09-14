@@ -1,0 +1,28 @@
+* {
+    background-color: black;
+    color: white;
+}
+a {
+    color: pink!important
+}
+
+.footer p {
+    font-size: 75%;
+    border-color: gray;
+    border-style: solid;
+    padding: 4px;
+    width: fit-content;
+}
+
+.postlist, .text {
+    border-color: white;
+    border-style: solid;
+    padding: 10px;
+}
+
+.postindex {
+    border-color: gray;
+    border-style: solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
